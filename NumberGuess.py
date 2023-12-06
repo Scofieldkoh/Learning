@@ -7,10 +7,12 @@ import random
 # Initialize attempts_list as an empty list
 attempts_list = []
 
+
 def show_score():
     if not attempts_list:
         print('There is currently no high score,'
               ' it\'s yours for the taking!')
+
 
 def start_game():
     attempts = 0
@@ -21,7 +23,7 @@ def start_game():
         f'Hi, {player_name}, would you like to play '
         f'the guessing game? (Enter Yes/No): ')
 
-    if wanna_play.lower() !='yes':
+    if wanna_play.lower() != 'yes':
         print('That\'s cool, Thanks!')
         exit()
 
@@ -33,7 +35,7 @@ def start_game():
             guess = int(input('Pick a number between 1 and 10: '))
             if guess < 1 or guess > 10:
                 raise ValueError(
-                    'Please guess a nunmber within the given range')
+                    'Please guess a number within the given range')
 
             attempts += 1
             attempts_list.append(attempts)
@@ -61,6 +63,7 @@ def start_game():
         except ValueError as err:
             print('Oh no! That is not a valid value. Try again...')
             print(err)
+
 
 if __name__ == '__main__':
     start_game()
